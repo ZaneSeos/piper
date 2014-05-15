@@ -36,16 +36,21 @@ def run_verbose():
     print('')
     #Asks for the file directory in which the server folder will be held
     filedir = input('Specify the full path name for the default directory: ')
-    boole = input(filedir, ': Is this correct? Answer y/n: ')
-    if boole == 'Y' | 'y':
-        continue
-    else:
-            filedir = input('Specify the full path for the default folder:')
+    boole = input('Is this correct? Answer y/n: ')
+    if (boole != 'Y' | 'y'):
+        filedir = input('Specify the full path for the default folder:')
     input('Press Enter to continue.')
     print("\n" * 80)
     print('STEP TWO: Setting up any other directories')
     print('------------------------------------------')
-
-
+    print('')
+    print('')
+    #Simple while structure that adds any input strings to a list
+    boole2 = input('Are there any other directories that need set up? y/n: ')
+    if (boole2 != 'n' | 'N'):
+        keep_running = true
+        while (keep_running == true):
+            adddir = input('Input the other directories (x to quit): ')
+            dirlist = []
 
 run_verbose()
