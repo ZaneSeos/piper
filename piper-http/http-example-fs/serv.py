@@ -4,6 +4,7 @@
 
 import littlehttpserver
 import os
+#TODO: Double check colorama functions to integrate usage
 import colorama
 
 #Will run piper-http with the VERBOSE (learning) option
@@ -36,9 +37,10 @@ def run_verbose():
     print('')
     #Asks for the file directory in which the server folder will be held
     filedir = input('Specify the full path name for the default directory: ')
-    boole = input('Is this correct? Answer y/n: ')
-    #FIXME: For some reason, an input of y causes the if statement to execute
+    boole = input('No mistakes? Answer y/n: ')
+    #OPTIMIZE: Needs a logic sanity check to ensure no wasted clock time
     if (boole is ('n' or 'N') and not ('Y' or 'y')):
+
         filedir = input('Specify the full path for the default folder:')
     input('Press Enter to continue.')
     print("\n" * 80)
@@ -47,15 +49,14 @@ def run_verbose():
     print('')
     print('')
     #Simple while structure that adds any input strings to a list
-    boole2 = input('Are there any other directories that need set up? y/n: ')
-    #FIXME: Also causes logic to execute. Perhaps reworking of the logic?
-    if (boole2 is 'y' or 'Y' and not 'n' or 'N'):
+    boole2 = input('Add directories? y/n: ')
+    #FIXME: Now causes if loop to pass no matter input
+    if (boole2 is ('y' or 'Y') and not ('n' or 'N')):
         keep_running = True
         while (keep_running is True):
             dirlist = []
             item = 0
             adddir = input('Input the other directories (x to quit): ')
-            #FIXME: Throws UnboundLocalError (referenced before assignment)
             if (addir is not 'x' or 'X'):
                 for item in dirlist:
                     addir = dirlist[item]
