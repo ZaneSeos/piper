@@ -5,14 +5,19 @@
 import littlehttpserver
 import os
 #TODO: Double check colorama functions to integrate usage
-import colorama
+from colorama import *
+
 
 #Will run piper-http with the VERBOSE (learning) option
 #Note that while this looks ugly, it's supposed to be simple
-def run_verbose():
-    print("PIPER Proof-Of-Concept HTTP Server (using LittleHTTPServer 0.1.4)")
-    print("LittleHTTPServer created by Tetsuya Morimoto")
-    print("Documents are located at http://bitbucket.org/t2y/littlehttpserver")
+class run_verbose():
+    def  __init__(self):
+        def run_verbose():
+            print(Fore.WHITE + "PIPER Proof-Of-Concept HTTP Server" +
+            Fore.GREEN + "(on LittleHTTPServer 0.1.4)")
+    print(Fore.YELLOW + "LittleHTTPServer created by Tetsuya Morimoto")
+    print(Fore.YELLOW + "Documents are located at" +
+    Fore.YELLOW + "http://bitbucket.org/t2y/littlehttpserver")
     print('')
     print('')
     print('Welcome to the PIPER HTTP Server Proof of Concept!')
@@ -26,8 +31,8 @@ def run_verbose():
     print('another computer to test this with.')
     print('')
     print('')
-    input('Press Enter to get started!')
-    print("\n" * 80)
+    eval(input('Press Enter to get started!'))
+    print(("\n" * 10))
     print('STEP ONE: Setting up the default directory')
     print('------------------------------------------')
     print('')
@@ -36,14 +41,12 @@ def run_verbose():
     print('named "index.html" as the first web page.')
     print('')
     #Asks for the file directory in which the server folder will be held
-    filedir = input('Specify the full path name for the default directory: ')
-    boole = input('No mistakes? Answer y/n: ')
+    filedir = eval(input('Type the full path name for the default directory: '))
+    boole = eval(input('No mistakes? Answer y/n: '))
     #OPTIMIZE: Needs a logic sanity check to ensure no wasted clock time
     if (boole is ('n' or 'N') and not ('Y' or 'y')):
-
-        filedir = input('Specify the full path for the default folder:')
-    input('Press Enter to continue.')
-    print("\n" * 80)
+        filedir = (eval(input('Specify the full path for the default folder:'))
+    print(("\n" * 10))
     print('STEP TWO: Setting up any other directories')
     print('------------------------------------------')
     print('')
@@ -63,8 +66,3 @@ def run_verbose():
                     item + 1
             else:
                 keep_running = False
-
-
-
-
-run_verbose()
