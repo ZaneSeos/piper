@@ -13,11 +13,11 @@ from colorama import *
 class run_verbose():
     def  __init__(self):
         def run_verbose():
-            print(Fore.WHITE + "PIPER Proof-Of-Concept HTTP Server" +
-            Fore.GREEN + "(on LittleHTTPServer 0.1.4)")
-    print(Fore.YELLOW + "LittleHTTPServer created by Tetsuya Morimoto")
-    print(Fore.YELLOW + "Documents are located at" +
-    Fore.YELLOW + "http://bitbucket.org/t2y/littlehttpserver")
+            print((Fore.WHITE + "PIPER Proof-Of-Concept HTTP Server" +
+            Fore.GREEN + "(on LittleHTTPServer 0.1.4)"))
+    print((Fore.YELLOW + "LittleHTTPServer created by Tetsuya Morimoto"))
+    print((Fore.YELLOW + "Documents are located at" +
+    Fore.YELLOW + "http://bitbucket.org/t2y/littlehttpserver"))
     print('')
     print('')
     print('Welcome to the PIPER HTTP Server Proof of Concept!')
@@ -45,24 +45,24 @@ class run_verbose():
     boole = eval(input('No mistakes? Answer y/n: '))
     #OPTIMIZE: Needs a logic sanity check to ensure no wasted clock time
     if (boole is ('n' or 'N') and not ('Y' or 'y')):
-        filedir = (eval(input('Specify the full path for the default folder:'))
-    print(("\n" * 10))
+        filedir = (eval(input('Specify the full path for the default folder:')))
+    print((("\n" * 10)))
     print('STEP TWO: Setting up any other directories')
     print('------------------------------------------')
     print('')
     print('')
     #Simple while structure that adds any input strings to a list
-    boole2 = input('Add directories? y/n: ')
+    boole2 = eval(input('Add directories? y/n: '))
     #FIXME: Now causes if loop to pass no matter input
-    if (boole2 is ('y' or 'Y') and not ('n' or 'N')):
+    if (boole2 is ('y' or 'Y')):
         keep_running = True
         while (keep_running is True):
             dirlist = []
             item = 0
-            adddir = input('Input the other directories (x to quit): ')
+            adddir = eval(input('Input the other directories (x to quit): '))
             if (addir is not 'x' or 'X'):
                 for item in dirlist:
                     addir = dirlist[item]
                     item + 1
-            else:
+            elif (boole2 is ('n' or 'N')):
                 keep_running = False
